@@ -28,9 +28,8 @@ using namespace cv::cuda;
 void calculate_opticalflow(String *video_path, vector<Mat>* flow_fields, vector<Mat>* frames);
 void visualizetrajectories(vector<vector<Mat>>*integrated_flowfields, Mat* trajectories_img, vector<Mat>* frames);
 void visualizeflow(Mat* flow, Mat *img);
-float BilinearInterpolation(float q11, float q12, float q21, float q22, int x1, int x2, int y1, int y2, float x, float y);
 vector<vector<Mat>> integrateflowfield(vector<Mat>* flowfields);
-
+vector<Mat> Calc_MSD(vector<vector<Mat>>* integrated_flowfields);
 
 
 #endif#include <iostream>

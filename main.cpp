@@ -22,7 +22,7 @@ int main(int argc, const char** argv)
         cap >> frame;
         if (frame.empty())
             break;
-        if(i>300)
+        if(i>650)
             frames.push_back(frame);
         
     }
@@ -44,6 +44,9 @@ int main(int argc, const char** argv)
     end = clock();
     cout << "time for interpolation= " << (double(end) - double(start)) / double(CLOCKS_PER_SEC)<< endl;
     visualizetrajectories(&integratedflowfields, &trajectories,&frames);
+
+    vector<Mat> MSD;
+    MSD = Calc_MSD(&integratedflowfields);
 
     namedWindow("trajectories",0);
     //applyColorMap(trajectories, trajectories, COLORMAP_VIRIDIS);
